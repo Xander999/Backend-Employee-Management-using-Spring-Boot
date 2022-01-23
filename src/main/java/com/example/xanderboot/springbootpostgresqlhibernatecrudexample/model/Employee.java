@@ -1,5 +1,7 @@
 package com.example.xanderboot.springbootpostgresqlhibernatecrudexample.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,8 +11,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "employees")
-public class Employee {
+public class Employee implements Serializable {
 
+	private static final long serialVersionUID = 395729529858230975L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
